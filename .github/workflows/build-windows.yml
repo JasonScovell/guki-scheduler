@@ -25,7 +25,7 @@ jobs:
     
     - name: Build executable
       run: |
-        pyinstaller --onefile --name=GUKI_Scheduler_Windows --add-data=requirements.txt;. --hidden-import=tkinter --hidden-import=tkinter.ttk --hidden-import=tkinter.messagebox --hidden-import=openpyxl --hidden-import=sqlite3 --hidden-import=datetime --hidden-import=calendar --hidden-import=threading --hidden-import=queue --hidden-import=random --hidden-import=os --hidden-import=sys --hidden-import=json --hidden-import=pathlib --collect-all=tkinter --collect-all=openpyxl call_scheduler_optimized.py
+        pyinstaller --onefile --name=GUKI_Scheduler_Windows --add-data=requirements.txt:. --hidden-import=tkinter --hidden-import=tkinter.ttk --hidden-import=tkinter.messagebox --hidden-import=openpyxl --hidden-import=sqlite3 --hidden-import=datetime --hidden-import=calendar --hidden-import=threading --hidden-import=queue --hidden-import=random --hidden-import=os --hidden-import=sys --hidden-import=json --hidden-import=pathlib --collect-all=tkinter --collect-all=openpyxl call_scheduler_optimized.py
     
     - name: Upload Windows executable
       uses: actions/upload-artifact@v4
