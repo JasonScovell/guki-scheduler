@@ -10,10 +10,10 @@ jobs:
     runs-on: windows-latest
     
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up Python
-      uses: actions/setup-python@v4
+      uses: actions/setup-python@v5
       with:
         python-version: '3.11'
     
@@ -28,7 +28,7 @@ jobs:
         pyinstaller --onefile --name=GUKI_Scheduler_Windows --add-data=requirements.txt;. --hidden-import=tkinter --hidden-import=tkinter.ttk --hidden-import=tkinter.messagebox --hidden-import=openpyxl --hidden-import=sqlite3 --hidden-import=datetime --hidden-import=calendar --hidden-import=threading --hidden-import=queue --hidden-import=random --hidden-import=os --hidden-import=sys --hidden-import=json --hidden-import=pathlib --collect-all=tkinter --collect-all=openpyxl call_scheduler_optimized.py
     
     - name: Upload Windows executable
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: GUKI_Scheduler_Windows
         path: dist/GUKI_Scheduler_Windows.exe 
